@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x2ansible Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 640px;
+            margin: 80px auto;
+            padding: 0 20px;
+            color: #333;
+        }
+        h1 { color: #0078d4; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .status {
+            background: #dff6dd;
+            border-left: 4px solid #107c10;
+            padding: 12px 16px;
+            margin: 24px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>x2ansible Windows Demo</h1>
+    <div class="status">IIS is running and serving this page via DSC configuration.</div>
+    <p>This page was deployed by the <code>IISStaticSite</code> DSC configuration
+       as part of the <strong>windows-examples</strong> project.</p>
+    <h2>What was configured</h2>
+    <ul>
+        <li>Installed <code>Web-Server</code> and <code>Web-Mgmt-Console</code> features</li>
+        <li>Started the <code>W3SVC</code> service</li>
+        <li>Created <code>C:\inetpub\x2a-site</code> directory</li>
+        <li>Pointed Default Web Site to this directory</li>
+    </ul>
+</body>
+</html>
