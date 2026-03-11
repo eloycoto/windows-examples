@@ -1,0 +1,20 @@
+[
+  {
+    "name": "system-baseline",
+    "path": "configs/system-baseline",
+    "description": "Windows Server baseline configuration including timezone settings, local user creation, Windows features installation, firewall rules, and IE Enhanced Security Configuration",
+    "technology": "PowerShell"
+  },
+  {
+    "name": "iis-static-site",
+    "path": "configs/iis-static-site",
+    "description": "IIS web server installation and configuration with static website deployment",
+    "technology": "PowerShell"
+  },
+  {
+    "name": "app-deployment",
+    "path": "configs/app-deployment",
+    "description": "Application deployment scripts for installing Chocolatey packages and configuring scheduled tasks",
+    "technology": "PowerShell"
+  }
+]
