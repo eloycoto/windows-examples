@@ -1,0 +1,44 @@
+---
+- name: Set system timezone
+  ansible.windows.win_timezone:
+    timezone: "{{ timezone }}"
+- name: Create demo user
+  ansible.windows.win_user:
+    name: "{{ demo_username }}"
+    fullname: "{{ demo_fullname }}"
+    description: "{{ demo_description }}"
+    password: "{{ demo_user_password | default(omit) }}"
+    password_never_expires: "{{ demo_password_never_expires }}"
+    user_cannot_change_password: "{{ demo_password_change_not_allowed }}"
+    state: present
+  no_log: true
+- name: Install Telnet Client feature
+  ansible.windows.win_feature:
+    name: Telnet-Client
+    state: present
+- name: Configure firewall rules
+  ansible.windows.win_firewall_rule:
+    name: "{{ item.name }}"
+    description: "{{ item.display_name }}"
+    direction: "{{ item.direction }}"
+    protocol: "{{ item.protocol }}"
+    localport: "{{ item.local_port }}"
+    action: "{{ item.action }}"
+    enabled: "{{ item.enabled }}"
+    profiles: "{{ item.profiles }}"
+    state: present
+  loop: "{{ firewall_rules }}"
+- name: Disable IE Enhanced Security Configuration for Administrators
+  ansible.windows.win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}
+    name: IsInstalled
+    data: 0
+    type: dword
+    state: present
+- name: Disable IE Enhanced Security Configuration for Users
+  ansible.windows.win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}
+    name: IsInstalled
+    data: 0
+    type: dword
+    state: present

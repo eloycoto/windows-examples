@@ -1,0 +1,32 @@
+---
+timezone: Eastern Standard Time
+demo_username: demo
+demo_fullname: x2ansible Demo User
+demo_description: Demo account created by system_baseline role
+demo_password_never_expires: true
+demo_password_change_not_allowed: true
+firewall_rules:
+  - name: X2A-Allow-HTTP
+    display_name: Allow HTTP Inbound
+    direction: inbound
+    protocol: tcp
+    local_port: "80"
+    action: allow
+    enabled: true
+    profiles: domain,private,public
+  - name: X2A-Allow-HTTPS
+    display_name: Allow HTTPS Inbound
+    direction: inbound
+    protocol: tcp
+    local_port: "443"
+    action: allow
+    enabled: true
+    profiles: domain,private,public
+  - name: X2A-Allow-RDP
+    display_name: Allow RDP Inbound
+    direction: inbound
+    protocol: tcp
+    local_port: "3389"
+    action: allow
+    enabled: true
+    profiles: domain,private,public

@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  role_name: system_baseline
+  author: x2ansible
+  description: Establishes a baseline system configuration including timezone settings, user accounts, Windows features, firewall rules, and IE security
+    settings
+  license: Apache-2.0
+  min_ansible_version: "2.9"
+  platforms:
+    - name: Windows
+      versions:
+        - all
+  galaxy_tags:
+    - windows
+    - system
+    - configuration
+    - baseline
+dependencies: []

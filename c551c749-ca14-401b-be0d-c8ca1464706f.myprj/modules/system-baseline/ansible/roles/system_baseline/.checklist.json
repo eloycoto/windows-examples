@@ -1,0 +1,61 @@
+{
+  "module_name": "system_baseline",
+  "items": [
+    {
+      "category": "structure",
+      "source_path": "N/A",
+      "target_path": "./ansible/roles/system_baseline/meta/main.yml",
+      "status": "complete",
+      "description": "Role metadata file",
+      "notes": "Created meta/main.yml with role metadata"
+    },
+    {
+      "category": "structure",
+      "source_path": "N/A",
+      "target_path": "./ansible/roles/system_baseline/tasks/main.yml",
+      "status": "complete",
+      "description": "Main tasks file",
+      "notes": "Created tasks/main.yml with all required tasks"
+    },
+    {
+      "category": "structure",
+      "source_path": "N/A",
+      "target_path": "./ansible/roles/system_baseline/defaults/main.yml",
+      "status": "complete",
+      "description": "Default variables file",
+      "notes": "Created defaults/main.yml with default variables"
+    },
+    {
+      "category": "recipes",
+      "source_path": "configs/system-baseline/SystemBaseline.ps1",
+      "target_path": "./ansible/roles/system_baseline/tasks/main.yml",
+      "status": "complete",
+      "description": "Convert SystemBaseline DSC configuration to Ansible tasks",
+      "notes": "Converted PowerShell DSC configuration to Ansible tasks"
+    },
+    {
+      "category": "dependencies",
+      "source_path": "collection:community.windows",
+      "target_path": "./ansible/roles/system_baseline/requirements.yml",
+      "status": "complete",
+      "description": "Windows timezone management",
+      "notes": "Added required collections to requirements.yml"
+    },
+    {
+      "category": "dependencies",
+      "source_path": "collection:ansible.windows",
+      "target_path": "./ansible/roles/system_baseline/requirements.yml",
+      "status": "complete",
+      "description": "Windows user and registry management",
+      "notes": "Added required collections to requirements.yml"
+    },
+    {
+      "category": "structure",
+      "source_path": "N/A",
+      "target_path": "ansible/roles/system_baseline/meta/main.yml",
+      "status": "complete",
+      "description": "Created standard meta/main.yml",
+      "notes": ""
+    }
+  ]
+}
