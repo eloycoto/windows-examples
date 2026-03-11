@@ -1,0 +1,7 @@
+---
+- name: Run system_baseline
+  hosts: all
+
+
+  roles:
+    - system_baseline
